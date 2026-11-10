@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pepper-sync
+
+Files: *
+Copyright: 2026 pepper-sync contributors
+License: unspecified
+ No redistribution license has been specified for this project.

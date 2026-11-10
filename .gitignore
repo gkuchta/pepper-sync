@@ -1,0 +1,12 @@
+/build/
+/debian/.debhelper/
+/debian/debhelper-build-stamp
+/debian/files
+/debian/pepper-sync/
+/debian/*.debhelper
+/debian/*.substvars
+*.deb
+*.buildinfo
+*.changes
+*.dsc
+*.tar.xz

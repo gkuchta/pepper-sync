@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+# Stop the timer first, before stopping an in-flight download below.
+#DEBHELPER#
+
+# dh_installsystemd --no-start also omits its removal-time stop snippet.
+if [ "$1" = remove ] && [ -d /run/systemd/system ]; then
+    deb-systemd-invoke stop pepper-sync.service >/dev/null || true
+fi

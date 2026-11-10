@@ -1,0 +1,15 @@
+Source: pepper-sync
+Section: admin
+Priority: optional
+Maintainer: Pepper Sync Maintainers <pepper-sync@localhost>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+
+Package: pepper-sync
+Architecture: all
+Depends: ${misc:Depends}, adduser, rclone, systemd
+Description: hourly video downloads for a Pepper's Ghost display
+ Installs a dedicated service account and a systemd timer to copy videos
+ from the rclone remote tinycrypt: to /data/video every hour.
+ Remote credentials are supplied separately by the administrator.

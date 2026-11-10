@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_installsystemd:
+	dh_installsystemd --no-start --no-stop-on-upgrade pepper-sync.service
+	dh_installsystemd pepper-sync.timer
