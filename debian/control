@@ -11,5 +11,5 @@ Architecture: all
 Depends: ${misc:Depends}, adduser, rclone, systemd
 Description: hourly video downloads for a Pepper's Ghost display
  Installs a dedicated service account and a systemd timer to copy videos
- from the rclone remote tinycrypt: to /data/video every hour.
+ from the rclone remote tinycrypt: to /data/tinygarretts every hour.
  Remote credentials are supplied separately by the administrator.

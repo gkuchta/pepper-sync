@@ -7,7 +7,7 @@ case "$1" in
             --shell /usr/sbin/nologin pepper-sync
 
         # Do not recursively change existing videos or the shared /data parent.
-        install -d -o pepper-sync -g pepper-sync -m 0755 /data/video
+        install -d -o pepper-sync -g pepper-sync -m 0755 /data/tinygarretts
 
         # rclone may atomically replace this file when refreshing OAuth tokens.
         install -d -o pepper-sync -g pepper-sync -m 0700 /etc/pepper-sync

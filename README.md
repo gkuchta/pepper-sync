@@ -54,10 +54,10 @@ automatically; the manual start above performs the initial download immediately.
 The service runs as `pepper-sync` and invokes:
 
 ```sh
-/usr/bin/rclone copy tinycrypt: /data/video/ --size-only --config /etc/pepper-sync/rclone.conf --ask-password=false --log-level INFO
+/usr/bin/rclone copy tinycrypt: /data/tinygarretts/ --size-only --config /etc/pepper-sync/rclone.conf --ask-password=false --log-level INFO
 ```
 
-`/data/video/` is the absolute form of the requested `./video/` when run from
+`/data/tinygarretts/` is the absolute form of the requested `./video/` when run from
 `/data`. `--size-only` skips an existing destination file of the same size even
 when its contents changed. Differently sized files can be replaced. `copy`
 preserves local files when they disappear from the remote; it does not mirror
@@ -67,7 +67,7 @@ and [size-only documentation](https://rclone.org/docs/#size-only).
 The timer runs at each clock hour (within systemd's default one-minute accuracy).
 `Persistent=true` runs one catch-up copy after downtime. A copy may take longer
 than an hour; systemd does not start a second instance while it is still running.
-The service waits for the mount containing `/data/video` and requests network
+The service waits for the mount containing `/data/tinygarretts` and requests network
 readiness. A failed download is logged and is tried again at the next timer tick.
 
 ```sh

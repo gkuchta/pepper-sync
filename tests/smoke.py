@@ -19,14 +19,14 @@ def main():
     with tempfile.TemporaryDirectory(prefix="pepper-sync-smoke-") as directory:
         root = Path(directory)
         source = root / "source"
-        destination = root / "video"
+        destination = root / "tinygarretts"
         source.mkdir()
         (source / "nested").mkdir()
         (source / "nested/clip.mp4").write_bytes(b"first video")
         config = root / "rclone.conf"
         config.write_text(f"[tinycrypt]\ntype = alias\nremote = {source}\n")
         os.chmod(config, 0o600)
-        command[command.index("/data/video/")] = str(destination)
+        command[command.index("/data/tinygarretts/")] = str(destination)
         command[command.index("--config") + 1] = str(config)
 
         # Ignore any developer's rclone environment when exercising the fixture.

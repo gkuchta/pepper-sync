@@ -2,7 +2,7 @@
 Description=Copy Pepper's Ghost videos from remote storage
 Wants=network-online.target
 After=network-online.target
-RequiresMountsFor=/data/video
+RequiresMountsFor=/data/tinygarretts
 ConditionPathExists=/etc/pepper-sync/rclone.conf
 
 [Service]
@@ -10,7 +10,7 @@ Type=oneshot
 User=pepper-sync
 Group=pepper-sync
 UMask=0022
-ExecStart=/usr/bin/rclone copy tinycrypt: /data/video/ --size-only --config /etc/pepper-sync/rclone.conf --ask-password=false --log-level INFO
+ExecStart=/usr/bin/rclone copy tinycrypt: /data/tinygarretts/ --size-only --config /etc/pepper-sync/rclone.conf --ask-password=false --log-level INFO
 TimeoutStartSec=infinity
 CacheDirectory=pepper-sync
 CacheDirectoryMode=0700
@@ -19,4 +19,4 @@ NoNewPrivileges=true
 PrivateTmp=true
 ProtectHome=true
 ProtectSystem=strict
-ReadWritePaths=/data/video /etc/pepper-sync
+ReadWritePaths=/data/tinygarretts /etc/pepper-sync
